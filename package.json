@@ -1,0 +1,23 @@
+{
+  "name": "acode-regex",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Regular Expression language mode for Acode, adapted from the Sublime Text syntax definitions",
+  "author": "RichNSD",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "dev": "node esbuild.config.mjs --serve",
+    "test": "node --test \"test/*.test.js\""
+  },
+  "devDependencies": {
+    "@codemirror/autocomplete": "^6.20.4",
+    "@codemirror/language": "^6.13.1",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.15",
+    "@lezer/highlight": "^1.2.5",
+    "esbuild": "^0.27.2",
+    "jszip": "^3.10.1"
+  }
+}

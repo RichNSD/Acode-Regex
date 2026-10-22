@@ -1,0 +1,21 @@
+{
+  "$schema": "https://acode.app/schema/plugin/v0.1.0.json",
+  "id": "richnsd.regex",
+  "name": "Regular Expression",
+  "main": "main.js",
+  "version": "1.0.0",
+  "readme": "readme.md",
+  "changelogs": "changelog.md",
+  "repository": "https://github.com/RichNSD/Acode-Regex",
+  "icon": "icon.png",
+  "files": [],
+  "minVersionCode": 970,
+  "license": "MIT",
+  "keywords": ["regex", "regexp", "regular expression", "syntax", "language", "sublime", "pcre"],
+  "price": 0,
+  "permissions": [],
+  "author": {
+    "name": "RichNSD",
+    "github": "RichNSD"
+  }
+}
