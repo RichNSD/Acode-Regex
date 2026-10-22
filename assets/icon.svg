@@ -1,4 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="96" fill="#1e1f29"/>
-  <text x="256" y="316" text-anchor="middle" font-family="Menlo, monospace" font-weight="bold" font-size="170" fill="#f8f8f2"><tspan fill="#ff79c6">/</tspan><tspan fill="#8be9fd">.</tspan><tspan fill="#ff79c6">*</tspan><tspan fill="#ff79c6">/</tspan></text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1{fill:#1e1f29}
+      .cls-2{fill:none;stroke:#8be9fd;stroke-width:18;stroke-miterlimit:10}
+      .cls-3{fill:#ff79c6}
+      .cls-4{fill:#8be9fd}
+    </style>
+    <clipPath id="clip-path-1">
+      <path d="M96 0 L416 0 C469.019 0 512 42.981 512 96 L512 416 C512 469.019 469.019 512 416 512 L96 512 C42.981 512 0 469.019 0 416 L0 96 C0 42.981 42.981 0 96 0 Z"/>
+    </clipPath>
+  </defs>
+  <title>icon.svg</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path d="M96 0 L416 0 C469.019 0 512 42.981 512 96 L512 416 C512 469.019 469.019 512 416 512 L96 512 C42.981 512 0 469.019 0 416 L0 96 C0 42.981 42.981 0 96 0 Z" class="cls-1"/>
+    <g>
+      <path d="M96 0 L416 0 C469.019 0 512 42.981 512 96 L512 416 C512 469.019 469.019 512 416 512 L96 512 C42.981 512 0 469.019 0 416 L0 96 C0 42.981 42.981 0 96 0 Z" class="cls-2" clip-path="url(#clip-path-1)"/>
+    </g>
+    <g>
+      <path d="M125.927 192.069 L144.271 192.069 L79.027 331.771 L60.683 331.771 Z" class="cls-3"/>
+      <path d="M190.922 285.536 L218.563 285.536 L218.563 316 L190.922 316 Z" class="cls-4"/>
+      <path d="M353.534 245.277 L319.252 263.788 L353.617 282.465 L346.312 295.082 L313.856 275.492 L313.856 311.767 L299.164 311.767 L299.164 275.575 C293.907 278.729 288.484 281.994 282.895 285.37 C277.305 288.746 271.91 291.983 266.708 295.082 L259.486 282.465 L293.935 263.788 L259.569 245.277 L266.708 232.577 L299.164 252.084 L299.164 215.893 L313.856 215.893 L313.856 252.084 C319.169 248.93 324.606 245.665 330.167 242.289 C335.729 238.913 341.111 235.676 346.312 232.577 Z" class="cls-3"/>
+      <path d="M432.973 192.069 L451.317 192.069 L386.073 331.771 L367.729 331.771 Z" class="cls-3"/>
+    </g>
+  </g>
 </svg>

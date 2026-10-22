@@ -27,6 +27,9 @@ doesn't add highlighting to other languages.
   - `[:` inside a set gives POSIX classes
 
   Named groups you've already written are offered as back-references.
+- **File icon:** `.re` and `.regex` files show the plugin's icon in the file
+  browser and editor tabs. This works with Acode's default icon theme. If you
+  pick a different icon theme in Acode, that theme decides the icon.
 - Auto-closing is limited to `(`, `[` and `{`, because quotes in a regex are
   literal characters.
 

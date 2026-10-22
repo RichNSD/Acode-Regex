@@ -1,4 +1,5 @@
 import plugin from "../plugin.json";
+import { addFileIconStyle, removeFileIconStyle } from "./fileIcon.js";
 import { createLanguageSupport, LANGUAGES } from "./languages.js";
 
 class RegexPlugin {
@@ -18,6 +19,7 @@ class RegexPlugin {
 			);
 			this.#registered.push(spec.id);
 		}
+		addFileIconStyle();
 		this.#refreshOpenFiles();
 	}
 
@@ -25,6 +27,7 @@ class RegexPlugin {
 		const editorLanguages = acode.require("editorLanguages");
 		for (const id of this.#registered) editorLanguages.unregister(id);
 		this.#registered = [];
+		removeFileIconStyle();
 		this.#refreshOpenFiles();
 	}
 

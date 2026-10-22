@@ -41,6 +41,7 @@ const buildConfig = {
 	format: "iife",
 	logLevel: "info",
 	outdir: "dist",
+	loader: { ".svg": "text" },
 	plugins: [acodeModules, zipPlugin],
 };
 
