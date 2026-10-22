@@ -1,0 +1,151 @@
+{
+  "scope" : "source.regexp.js",
+  "contexts" : {
+    "anchor" : [
+      {
+        "match" : "\\\\[bB]|\\^|\\$",
+        "scope" : "keyword.control.anchor.regexp"
+      }
+    ],
+    "character-class" : [
+      {
+        "match" : "\\\\[wWsSdD]|\\.",
+        "scope" : "constant.other.character-class.escape.backslash.regexp"
+      },
+      {
+        "match" : "\\\\([trnvf0\\\\]|c[A-Z]|x[\\da-fA-F]{2}|u[\\da-fA-F]{4}|.)",
+        "scope" : "constant.character.escape.backslash.regexp"
+      }
+    ],
+    "quantifier" : [
+      {
+        "match" : "(\\?|\\*\\??|\\+\\??)|\\{(\\d+,\\d+|\\d+,|\\d+)\\}",
+        "scope" : "keyword.operator.quantifier.regexp"
+      }
+    ],
+    "group-definition" : [
+      {
+        "match" : "(\\()((\\?:))?",
+        "push" : [
+          {
+            "meta_scope" : "meta.group.regexp"
+          },
+          {
+            "match" : "(\\))",
+            "pop" : true,
+            "captures" : {
+              "1" : "punctuation.definition.group.regexp"
+            }
+          },
+          {
+            "include" : "main"
+          }
+        ],
+        "captures" : {
+          "1" : "punctuation.definition.group.regexp",
+          "3" : "punctuation.definition.group.no-capture.regexp"
+        }
+      }
+    ],
+    "backref" : [
+      {
+        "match" : "\\\\[1-9][0-9]*",
+        "scope" : "keyword.other.back-reference.regexp"
+      }
+    ],
+    "operator" : [
+      {
+        "match" : "\\|",
+        "scope" : "keyword.operator.or.regexp"
+      }
+    ],
+    "character-class-definition" : [
+      {
+        "match" : "(\\[)(\\^)?",
+        "push" : [
+          {
+            "meta_scope" : "constant.other.character-class.set.regexp"
+          },
+          {
+            "match" : "(\\])",
+            "pop" : true,
+            "captures" : {
+              "1" : "punctuation.definition.character-class.regexp"
+            }
+          },
+          {
+            "include" : "character-class"
+          },
+          {
+            "match" : "(?x)\n(\n  (\\\\[wWsSdD]|\\.)|\n  (\\\\([trnvf0]|c[A-Z]|x[\\da-fA-F]{2}|u[\\da-fA-F]{4}|.))\n)\\-\n(\n  (\\\\[wWsSdD]|\\.)|\n  (\\\\([trnvf0]|c[A-Z]|x[\\da-fA-F]{2}|u[\\da-fA-F]{4}|.))\n)",
+            "scope" : "constant.other.character-class.range.regexp",
+            "captures" : {
+              "3" : "constant.character.escape.backslash.regexp",
+              "6" : "constant.character.escape.backslash.regexp",
+              "2" : "constant.other.character-class.escape.backslash.regexp",
+              "5" : "constant.other.character-class.escape.backslash.regexp"
+            }
+          }
+        ],
+        "captures" : {
+          "1" : "punctuation.definition.character-class.regexp",
+          "2" : "keyword.operator.negation.regexp"
+        }
+      }
+    ],
+    "main" : [
+      {
+        "include" : "anchor"
+      },
+      {
+        "include" : "backref"
+      },
+      {
+        "include" : "quantifier"
+      },
+      {
+        "include" : "operator"
+      },
+      {
+        "include" : "group-assertion"
+      },
+      {
+        "include" : "group-definition"
+      },
+      {
+        "include" : "character-class"
+      },
+      {
+        "include" : "character-class-definition"
+      }
+    ],
+    "group-assertion" : [
+      {
+        "match" : "(\\()((\\?=)|(\\?!))",
+        "push" : [
+          {
+            "meta_scope" : "meta.group.assertion.regexp"
+          },
+          {
+            "match" : "(\\))",
+            "pop" : true,
+            "captures" : {
+              "1" : "punctuation.definition.group.regexp"
+            }
+          },
+          {
+            "include" : "main"
+          }
+        ],
+        "captures" : {
+          "3" : "meta.assertion.look-ahead.regexp",
+          "1" : "punctuation.definition.group.regexp",
+          "4" : "meta.assertion.negative-look-ahead.regexp",
+          "2" : "punctuation.definition.group.assertion.regexp"
+        }
+      }
+    ]
+  },
+  "name" : "Regular Expressions (Javascript)",
+  "hidden" : true
+}
