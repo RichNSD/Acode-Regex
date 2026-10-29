@@ -6,6 +6,8 @@ get syntax highlighting for the regex itself, as a scratchpad for writing and
 checking long expressions. It doesn't run, test or evaluate anything, and it
 doesn't add highlighting to other languages.
 
+This is the Acode companion to the [VSCode plugin](https://github.com/RichNSD/VSCode-Regex) and (generally) behaves the same way.
+
 ## Features
 
 - **Highlighting** driven by the original `RegExp.sublime-syntax` (PCRE syntax,
@@ -36,6 +38,13 @@ doesn't add highlighting to other languages.
 Colours come from your Acode theme. Scopes are mapped the way TextMate and
 Sublime themes treat them: `keyword.*` gets the keyword colour, `constant.*` the
 constant colour, `comment.*` the comment colour, and so on.
+
+
+> [!info] AI Transparency Notice
+> This is my first time building an extension/plugin for either Acode or VSCode and I'm trying to use these extensions as a learning experience. So far all of my (self-taught) coding experience has been in the troubleshooting, editing, and fixing of things other people have built from scratch. So, I will admit that Claude Code has done basically all of the work during the initial builds on both versions of this extension as I learn how everything works. However, going forward, the goal is to use as little AI as possible because my goal is to learn how to *actually* be a developer. 
+>
+> The logo/icon is something I designed myself though. :sunglasses: The design files are free for anyone to use and play with in the repo, you can find them in the `/design` folder, and you can edit them with the awesome new open-source version of Adobe Illustrator: [VectorCraft](https://getartcraft.com/apps/vectorcraft)
+
 
 ## Build
 

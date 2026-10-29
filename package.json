@@ -1,6 +1,6 @@
 {
   "name": "acode-regex",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "description": "Regular Expression language mode for Acode, adapted from the Sublime Text syntax definitions",
   "author": "RichNSD",

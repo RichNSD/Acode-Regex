@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0
+
+- Changed plugin name to "Regex Syntax" on both Acode and VSCode
+- Icon redesign. Published design files to a new `/design` directory to allow for public use.
+- Adjustments to the README, including AI Transparency disclosure.
+
 ## 1.1.0
 
 - `.re` and `.regex` files show the plugin icon in the file browser and editor tabs (with Acode's default icon theme).
