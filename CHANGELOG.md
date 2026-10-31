@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1
+
+- Adjustments to the README, mostly formatting fixes.
+
 ## 1.2.0
 
 - Changed plugin name to "Regex Syntax" on both Acode and VSCode
