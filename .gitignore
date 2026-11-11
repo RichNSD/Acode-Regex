@@ -1,4 +1,4 @@
 node_modules
 dist
-plugin.zip
+plugin*.zip
 .DS_Store
