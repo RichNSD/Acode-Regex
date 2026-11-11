@@ -75,7 +75,7 @@ Adding a `?` to an empty set of `()` will initiate the following menu of complet
 ### Escape Characters: `\...`
 Simply inserting a `\` in most places will trigger the menu of escaped characters and classes.
 
-<img src="./media/examples/example_007.GIF" alt="Example" width="450"/>
+<img src="./media/examples/example_006.GIF" alt="Example" width="450"/>
 
 
 
