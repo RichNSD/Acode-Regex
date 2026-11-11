@@ -6,7 +6,7 @@ This is the Acode companion to the [VSCode plugin](https://github.com/RichNSD/VS
 
 
 <details>
-<summary><h2>Table of Contents</h2></summary>
+<summary><h2 style="display: inline">Table of Contents</h2></summary>
 
   - [Features](#features)
     - [Syntax Highlighting](#syntax-highlighting)
