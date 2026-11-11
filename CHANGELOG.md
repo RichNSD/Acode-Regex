@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2
+
+- README Overhaul.
+
 ## 1.2.1
 
 - Adjustments to the README, mostly formatting fixes.

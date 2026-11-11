@@ -1,57 +1,98 @@
 # Regular Expression for Acode
 
-A **Regular Expression** language for [Acode](https://acode.app), adapted from the Sublime Text definitions that the Textastic app (for iOS & MacOS) uses. Open a `.re` or `.regex` file and you get syntax highlighting for the regex itself, as a scratchpad for writing and checking long expressions. It doesn't run, test or evaluate anything, and it doesn't add highlighting to other languages.
+A **Regular Expression** language for **[Acode](https://acode.app)**, adapted from the **Sublime Text** definitions that the **Textastic app** (for iOS & MacOS) uses.
 
 This is the Acode companion to the [VSCode plugin](https://github.com/RichNSD/VSCode-Regex) and (generally) behaves the same way.
 
-## Features
 
-- **Highlighting** driven by the original `RegExp.sublime-syntax` (PCRE syntax, the same definition Sublime and Textastic bind to `.re`), including: groups, named groups, lookarounds, inline modes such as `(?i)`, conditionals, recursion, backtracking verbs, character sets with ranges and POSIX classes, escapes, quantifiers (lazy and possessive), back-references, `(?#…)` comments, `#` comments in `(?x)` mode, and errors such as a leading quantifier or an unmatched `)`.
-- **File types:** `.re` (from the Sublime definition) and `.regex`.
-- **Other flavours:** *Regular Expression (JavaScript)* and *Regular Expression (Python)* come from Sublime's two embedded regex syntaxes. They aren't tied to a file extension. Pick them from Acode's language selector.
-- **Completions** appear only after regex-specific prefixes, and each flavour gets its own list:
-  - `\` gives escapes and classes (`\d`, `\p{…}`, `\k<name>`, …)
-  - `(?` gives group constructs (`(?:…)`, `(?<name>…)`, `(?<=…)`, `(?(1)…|…)`, …)
-  - `(*` gives backtracking verbs
-  - `[:` inside a set gives POSIX classes
- Named groups you've already written are offered as back-references.
-- **File icon:** `.re` and `.regex` files show the plugin's icon in the file browser and editor tabs. This works with Acode's default icon theme. If you pick a different icon theme in Acode, that theme decides the icon.
-- Auto-closing is limited to `(`, `[` and `{`, because quotes in a regex are literal characters.
+<details>
+<summary><h2>Table of Contents</h2></summary>
 
-Colours come from your Acode theme. Scopes are mapped the way TextMate and Sublime themes treat them: `keyword.*` gets the keyword colour, `constant.*` the constant colour, `comment.*` the comment colour, and so on.
+  - [Features](#features)
+    - [Syntax Highlighting](#syntax-highlighting)
+    - [File Types](#file-types)
+    - [Regex Flavors](#regex-flavors)
+  - [Completions](#completions)
+    - [Group Constructs](#group-constructs-)
+    - [Escape Characters](#escape-characters-)
+
+</details>
+
+
+# Features
+
+## Syntax Highlighting
+This was the primary focus of project. Open a `.re` or `.regex` file and you get syntax highlighting for the regular expressions itself, as a scratchpad for writing and checking long expressions.
+
+<img src="./media/examples/example_001.png" alt="Example" width="350"/>
+
+As you can see by that screenshot, the one thing that this extension adds that is technically not valid syntax is comments. That was part of the original Sublime Syntax definitions, and I really liked it, so I kept them.
+
+
+
+
+> [!WARNING]
+> ### ⚠️ What it does NOT do
+> This is *strictly* a language pack for syntax highligting. This extension ***does not***... 
+> - Run, test, or evaluate anything
+> - Add highlighting to other languages
+> 
+> If you're looking for something to *test* regular expressions, I recommend using [Regex101](https://regex101.com).
+
+
+
+
+### File Types
+- `.re`
+- `.regex`
+
+### Regex Flavors
+- PCRE (default)
+- JavaScript
+- Python
+
+I'm also considering adding language definitions for **.NET Regular Expressions** for those working in **PowerShell** and **C#**.
+
+
+
+
+
+
+## Completions
+
+### Group Constructs: `(?...)`
+Adding a `?` to an empty set of `()` will initiate the following menu of completion options (which includes comments).
+
+<img src="./media/examples/example_004.GIF" alt="Example" width="450"/>
+
+**Example: Named Capture Group**
+
+<img src="./media/examples/example_005.GIF" alt="Example" width="450"/>
+
+
+
+
+### Escape Characters: `\...`
+Simply inserting a `\` in most places will trigger the menu of escaped characters and classes.
+
+<img src="./media/examples/example_007.GIF" alt="Example" width="450"/>
+
+
+
+---
 
 
 > [!IMPORTANT]
 > ### AI Transparency Notice
-> This is my first time building an extension/plugin for either Acode or VSCode and I'm trying to use these extensions as a learning experience. So far all of my (self-taught) coding experience has been in the troubleshooting, editing, and fixing of things other people have built from scratch. So, I will admit that Claude Code has done basically all of the work during the initial builds on both versions of this extension as I learn how everything works. However, going forward, the goal is to use as little AI as possible because my goal is to learn how to *actually* be a developer. 
-
+> This is my first time building an extension/plugin for either Acode or VSCode and I'm trying to use these extensions as a learning experience. So far all of my (self-taught) coding experience has been in the troubleshooting, editing, and fixing of things other people have built from scratch. So, I will admit that Claude Code has done most of the heavy lifting during the initial builds on both versions of this extension as I learn how everything works. However, going forward, the goal is to use as little AI as possible because my goal is to learn and improve ***my*** skills as a developer.
+  
 > [!NOTE]
 > ### The Art is Human-Made 😎
-> The logo/icon is something I designed myself though. The design files are free for anyone to use and play with in the repo. you can find them in the `/design` folder, and you can edit them with the awesome new open-source version of Adobe Illustrator: [VectorCraft](https://getartcraft.com/apps/vectorcraft)
+> The logo/icon is something I designed myself though. The design files are free for anyone to use and play with in the repo. You can find them in the `/design` folder, which I made using [VectorCraft](https://getartcraft.com/apps/vectorcraft): the awesome new open-source, _legally-distinct_ version of a certain super popular, orange-themed, vector-based design software.
 
 
-## Build
-
-Requires Node.js 18+.
+### Acode Build
 
 ```sh
-npm install
-npm test        # optional: runs the highlighter and completion tests
-npm run build   # writes dist/main.js and plugin.zip
+npm run build
 ```
-
-## Install on your phone
-
-Requires Acode **1.12.0 or newer**, the CodeMirror-based editor.
-
-**Copy the zip**
-
-1. Copy `plugin.zip` to the phone using any method (USB, Google Drive,  LocalSend, etc.).
-2. In Acode, open **Settings → Plugins** and tap **+** (top right), then **Local**.
-3. Select `plugin.zip`.
-
-
-
-## How it works
-
-`src/sublime/engine.js` reads the `.sublime-syntax` files in `sublime/` without changing them and runs them as a CodeMirror stream parser. It follows Sublime's context stack (`push`, `set`, `pop`, `include`, `meta_scope`, `captures`). `src/sublime/oniguruma.js` converts the few Oniguruma regex features that JavaScript lacks, such as `\h`, `(?x)` and a leading `]` in a class. CodeMirror itself is not bundled. The plugin uses Acode's own copy through `acode.require`.
